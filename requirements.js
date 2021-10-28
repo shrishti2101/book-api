@@ -36,8 +36,8 @@ Book
     -to add new book ✅
     
 -PUT
-    -to update book details
-    -to update/add new author
+    -to update book details✅
+    -to update/add new author ✅
 
 -DELETE
      -delete a book
@@ -47,14 +47,14 @@ Author
 -GET
     -to get all authors ✅
     -to get specific author  ✅
-    -to get list of author badsed on a book 
+    -to get list of author based on a book 
 
 -POST
     -to add new author ✅
-    -to update/add new author
+    -to update/add new author✅
 
 -PUT
-    -update author details
+    -update author details✅
 
 -DELETE
     -delete an author
