@@ -3,7 +3,7 @@ const BookModel = require("../schema/book");
 
 const Router=require('express').Router();
 
-/ Route    - /publication
+// Route    - /publication
 // Des      - to get all publication
 // Access   - Public
 // Method   - GET

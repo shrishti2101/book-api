@@ -33,7 +33,7 @@ Router.get("/book/:isbn",async(req,res) =>{
 //Access------Public
 //Method------GET
 //Params-------category
-OurApp.get("/book/c/:category",async(req,res) =>{
+Router.get("/book/c/:category",async(req,res) =>{
     const getSpecificBooks = await BookModel.find({
         category:req.params.category,
         });
@@ -67,7 +67,7 @@ Router.get("book/a/:author", async (request, response) => {
 //Access------Public
 //Method------POST
 //Params-------none
-OurApp.post("/book/new",async(req,res)=>{
+Router.post("/book/new",async(req,res)=>{
   
     try{  const{newBook} = req.body;
           await Book.create (newBook);
@@ -84,7 +84,7 @@ OurApp.post("/book/new",async(req,res)=>{
 //Access------Public
 //Method------PUT
 //Params-------ISBN
-OurApp.put("/book/updateAuthor/:isbn",async(req,res)=>{
+Router.put("/book/updateAuthor/:isbn",async(req,res)=>{
     const {newAuthor} =req.body;
     const {isbn} = req.params;
 
@@ -124,7 +124,7 @@ OurApp.put("/book/updateAuthor/:isbn",async(req,res)=>{
 //Access------Public
 //Method------PUT
 //Params-------ISBN
-OurApp.put("/book/updateTitle/:isbn",async(req,res)=>{
+Router.put("/book/updateTitle/:isbn",async(req,res)=>{
     const {title}=req.body.title;
     const updateBook =await BookModel.findOneAndUpdate(
       {
@@ -147,7 +147,7 @@ OurApp.put("/book/updateTitle/:isbn",async(req,res)=>{
 //Access------Public
 //Method------DELETE
 //Params-------ISBN
-OurApp.delete("/book/delete/:isbn",async(req,res)=>{
+Router.delete("/book/delete/:isbn",async(req,res)=>{
     const {isbn}=req.params;
 
     const updateBookDatabase = await BookModel.findOneAndDelete({
@@ -162,7 +162,7 @@ OurApp.delete("/book/delete/:isbn",async(req,res)=>{
 //Access------Public
 //Method------DELETE
 //Params-------ISBN,id
-OurApp.delete("/book/delete/author/update/:isbn/:id",async(req,res)=>
+Router.delete("/book/delete/author/update/:isbn/:id",async(req,res)=>
 {
 const {isbn,id}=req.params;
 //updating book database object
@@ -196,4 +196,4 @@ const {isbn,id}=req.params;
   return res.json({message:'Author was deleted',book:updatedBook,author:updatedAuthor});
 })
 
-mopdule.exports =Router;
+module.exports =Router;
